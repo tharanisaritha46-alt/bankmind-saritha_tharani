@@ -10,6 +10,13 @@ Track C includes Track B work: focused EDA, a Logistic Regression baseline, a
 Random Forest main model, model evaluation, feature importance, and 5 readable
 sample predictions. The written answers are in `EXPLANATION.md`.
 
+## Live API
+
+Deployed on Render:
+
+- Health check: <https://bankmind-saritha.onrender.com/health>
+- Swagger docs: <https://bankmind-saritha.onrender.com/docs>
+
 ## Results
 
 Test set: 20% stratified split, `random_state=42`.
