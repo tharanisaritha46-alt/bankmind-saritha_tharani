@@ -1,1 +1,0 @@
-BankMind upload permission check
