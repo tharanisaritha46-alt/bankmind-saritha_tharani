@@ -2,6 +2,8 @@
 
 BankMind Challenge submission for **Track C - System Builder**.
 
+[![Smoke test](https://github.com/tharanisaritha46-alt/bankmind-saritha_tharani/actions/workflows/ci.yml/badge.svg)](https://github.com/tharanisaritha46-alt/bankmind-saritha_tharani/actions/workflows/ci.yml)
+
 This project predicts whether a bank customer is likely to subscribe to a term
 deposit using the UCI Bank Marketing dataset (`bank-full.csv`) and serves the
 trained model through a FastAPI API.
@@ -10,12 +12,47 @@ Track C includes Track B work: focused EDA, a Logistic Regression baseline, a
 Random Forest main model, model evaluation, feature importance, and 5 readable
 sample predictions. The written answers are in `EXPLANATION.md`.
 
-## Live API
+## Live Demo
 
-Deployed on Render:
+The API is deployed on Render.
 
-- Health check: <https://bankmind-saritha.onrender.com/health>
-- Swagger docs: <https://bankmind-saritha.onrender.com/docs>
+| Link | URL |
+|---|---|
+| Health check | <https://bankmind-saritha.onrender.com/health> |
+| Swagger / FastAPI docs | <https://bankmind-saritha.onrender.com/docs> |
+| OpenAPI schema | <https://bankmind-saritha.onrender.com/openapi.json> |
+
+Quick live test:
+
+```bash
+curl https://bankmind-saritha.onrender.com/health
+```
+
+Live prediction example:
+
+```bash
+curl -X POST https://bankmind-saritha.onrender.com/predict \
+  -H "Content-Type: application/json" \
+  -d '{"age":64,"job":"retired","balance":7000,"housing":"no","loan":"no","duration":600}'
+```
+
+Live Groq explanation example:
+
+```bash
+curl -X POST https://bankmind-saritha.onrender.com/explain \
+  -H "Content-Type: application/json" \
+  -d '{"age":64,"job":"retired","balance":7000,"housing":"no","loan":"no","duration":600}'
+```
+
+## Reviewer Checklist
+
+- Track C FastAPI service: `/health`, `/predict`, `/explain`
+- Track B model work: Logistic Regression baseline vs Random Forest
+- Saved model artifact: `model/model.pkl`
+- Required write-up: `EXPLANATION.md`
+- Step-by-step process: `PROJECT_PROCESS.md`
+- Live deployment: Render links above
+- CI smoke test: GitHub Actions badge above
 
 ## Results
 
